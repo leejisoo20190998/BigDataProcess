@@ -21,7 +21,7 @@ Cplus = []
 Czero = []
 Fzero = []
 n = 1
-people = 10
+people = row_id - 1
 for t in total:
 	if n <= people * 15 // 100:
 		Aplus.append(t)
