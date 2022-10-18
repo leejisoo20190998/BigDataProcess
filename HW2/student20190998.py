@@ -34,7 +34,9 @@ Czero = []
 Fzero = []
 n = 1
 for t in total:
-	if n <= people * 15 // 100:
+	if t < 40:
+		Fzero.append(t)
+	elif n <= people * 15 // 100:
 		Aplus.append(t)
 	elif n <= people * 30 // 100:
 		Azero.append(t)
@@ -42,11 +44,10 @@ for t in total:
 		Bplus.append(t)
 	elif n <= people * 70 // 100:
 		Bzero.append(t)
+	elif n <= people * 85 // 100:
+		Cplus.append(t)
 	else:
-		if n <= people * 85 // 100:
-			Cplus.append(t)
-		else:
-			Czero.append(t)
+		Czero.append(t)
 	n += 1
 
 row_id = 1
