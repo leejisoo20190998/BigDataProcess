@@ -31,12 +31,9 @@ Bplus = []
 Bzero = []
 Cplus = []
 Czero = []
-Fzero = []
 n = 1
 for t in total:
-	if t < 40:
-		Fzero.append(t)
-	elif n <= people * 15 // 100:
+	if n <= people * 15 // 100:
 		Aplus.append(t)
 	elif n <= people * 30 // 100:
 		Azero.append(t)
@@ -67,7 +64,5 @@ for row in ws:
 			ws.cell(row = row_id, column = 8).value = "C+"
 		elif t in Czero:
 			ws.cell(row = row_id, column = 8).value = "C0"
-		else:
-			ws.cell(row = row_id, column = 8).value = "F"
 	row_id += 1
 wb.save("student.xlsx")
