@@ -44,10 +44,11 @@ for t in total:
 		Bplus.append(t)
 	elif n <= people * 70 // 100:
 		Bzero.append(t)
-	elif n <= people * 85 // 100:
-		Cplus.append(t)
 	else:
-		Czero.append(t)
+		if n <= people * 85 // 100:
+			Cplus.append(t)
+		else:
+			Czero.append(t)
 	n += 1
 
 row_id = 1
@@ -66,5 +67,7 @@ for row in ws:
 			ws.cell(row = row_id, column = 8).value = "C+"
 		elif t in Czero:
 			ws.cell(row = row_id, column = 8).value = "C0"
+		else:
+			ws.cell(row = row_id, column = 8).value = "F"
 	row_id += 1
 wb.save("student.xlsx")
