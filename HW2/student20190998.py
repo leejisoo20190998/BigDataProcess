@@ -6,10 +6,22 @@ ws = wb['Sheet1']
 
 total = []
 row_id = 1 
+people = 0
 for row in ws:
+	sum_v = 0
 	if row_id != 1:
+		sum_v += ws.cell(row = row_id, column = 3).value * 0.3
+		sum_v += ws.cell(row = row_id, column = 4).value * 0.35
+		sum_v += ws.cell(row = row_id, column = 5).value * 0.34
+		sum_v += ws.cell(row = row_id, column = 6).value
+		
+		ws.cell(row = row_id, column = 7).value = sum_v
+		
 		total.append(ws.cell(row = row_id, column = 7).value)
+		
+		people += 1
 	row_id += 1
+	
 
 total.sort(reverse=True)
 
@@ -21,7 +33,6 @@ Cplus = []
 Czero = []
 Fzero = []
 n = 1
-people = row_id - 1
 for t in total:
 	if n <= people * 15 // 100:
 		Aplus.append(t)
